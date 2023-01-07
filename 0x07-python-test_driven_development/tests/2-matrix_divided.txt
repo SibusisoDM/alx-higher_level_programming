@@ -1,0 +1,66 @@
+Test Task 1
+
+     >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+
+Section // TypeError kind of raise
+===================================
+
+case #6:
+     >>> matrix = [[3, 9], [12, 15]]
+     >>> matrix_divided(matrix, 0)
+     Traceback (most recent call last):
+     ZeroDivisionError: division by zero
+
+case #7:
+     >>> matrix = [[3, 9], [12, 15, 3]]
+     >>> matrix_divided(matrix, 2)
+     Traceback (most recent call last):
+     TypeError: Each row of the matrix must have the same size
+
+case #8:
+     >>> matrix = [[3, "9"], [12, 3]]
+     >>> matrix_divided(matrix, 2)
+     Traceback (most recent call last):
+     TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+case #9:
+     >>> matrix = [[3, 9], [12, 3]]
+     >>> matrix_divided(matrix, "2")
+     Traceback (most recent call last):
+     TypeError: div must be a number
+
+case #3:
+     >>> matrix = [[3, 9], [12, 3]]
+     >>> matrix_divided(matrix, 0.0)
+     Traceback (most recent call last):
+     ZeroDivisionError: float division by zero
+
+
+Section // Result Correct Matrix
+=================================
+
+case #0:
+     >>> matrix = [[1, 2, 3],[4, 5, 6]]
+     >>> matrix_divided(matrix, 3)
+     [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+case #1:
+     >>> matrix = [[3, 8], [12, 11]]
+     >>> matrix_divided(matrix, -3)
+     [[-1.0, -2.67], [-4.0, -3.67]]
+
+case #10:
+     >>> matrix = [[3, 9], [12, 3]]
+     >>> matrix_divided(matrix, 3.5)
+     [[0.86, 2.57], [3.43, 0.86]]
+
+case #2:
+     >>> matrix = [[3]]
+     >>> matrix_divided(matrix, 3)
+     [[1.0]]
+
+     case #12:
+     >>> matrix = [[0, 0], [0, 0]]
+     >>> matrix_divided(matrix, 0.1)
+     [[0.0, 0.0], [0.0, 0.0]]
